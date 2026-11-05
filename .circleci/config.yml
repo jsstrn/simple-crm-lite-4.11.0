@@ -110,6 +110,9 @@ workflows:
   build_test_publish:
     jobs:
       - build
+      - customer-controller-test:
+          requires:
+            - build
       - test:
           requires:
             - build
